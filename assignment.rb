@@ -3,7 +3,6 @@
 def get_addresses
 	addresses = []
 	User.all.collect{|user| addresses << user.address if 			 user.address.city.present?}
-	addresses.compact
 end
 #Example -2
 class Greeting
@@ -16,7 +15,7 @@ greeting = Greeting.new("sachin")
 greeting.name
 
 #Example -3
-def sum(params =[])
+def sum(*params)
 	params.sum
 end
 sum([2, 3]) #=> 5
